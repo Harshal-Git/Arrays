@@ -13,7 +13,7 @@ Array additional operations:
 
 Portals / Links: (check recent articles for latest updates / programs of that specific module)
 
-Basics:
+Basics: (done)
 	https://www.geeksforgeeks.org/array-data-structure/ 
 
 Rotations:
