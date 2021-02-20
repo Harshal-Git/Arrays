@@ -17,7 +17,7 @@ public class ReferenceReturnDemo3 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		StringBuilder builder = new StringBuilder("Builder");
+		StringBuilder builder = new StringBuilder("Hello world");
 		System.out.println("Builder data before: "+builder.toString());
 		System.out.println("Hashcode before changeData(): "+builder.hashCode());
 		changeData(builder);
@@ -31,7 +31,7 @@ public class ReferenceReturnDemo3 {
 	 */
 	private static void changeData(StringBuilder builder) {
 		System.out.println("--> Hashcode inside changeData() before append: "+builder.hashCode());
-		builder.append(" data to builder");
+		builder.append(" new data");
 		System.out.println("--> Hashcode inside changeData() after append: "+builder.hashCode());
 	}
 }

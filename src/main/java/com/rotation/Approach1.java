@@ -20,9 +20,13 @@ import java.util.Arrays;
  *		reverse(A, d, (n-1)) 
  *		reverse(A, 0, (n-1)) 
  *
- *	-> Time complexity: [CALCULATION NEEDED]
+ *	-> Time complexity: O(n)	: O(d-1)       ~ O(n) - for 0 --> (d-1)   
+ *								+ O((n-1) - d) ~ O(n) - for d --> (n-1)
+ *								+ O(n-1)       ~ O(n) - for 0 --> (n-1) 
+ *					   --> Total= O(3n) 	   ~ O(n) - ignoring constants
  *
- *	-> Space complexity: [CALCULATION NEEDED]
+ *	-> Space complexity: O(1) - considering additional int variables are used; their assignments 
+ *								taking constant time & input array is not being considered.
  */
 public class Approach1 {
 
