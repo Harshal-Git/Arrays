@@ -16,9 +16,9 @@ import java.util.Arrays;
  *
  *	-> Approach: Reverse array method (for left shift only)
  *		
- *		reverse(A, 0, (d-1)) 
- *		reverse(A, d, (n-1)) 
- *		reverse(A, 0, (n-1)) 
+ *		reverse(A, 0, (d-1)) : reverse partial array from 0 --> (d-1)
+ *		reverse(A, d, (n-1)) : reverse partial array from d --> (n-1)
+ *		reverse(A, 0, (n-1)) : reverse complete array from 0 --> (n-1) 
  *
  *	-> Time complexity: O(n)	: O(d-1)       ~ O(n) - for 0 --> (d-1)   
  *								+ O((n-1) - d) ~ O(n) - for d --> (n-1)
@@ -28,7 +28,7 @@ import java.util.Arrays;
  *	-> Space complexity: O(1) - considering additional int variables are used; their assignments 
  *								taking constant time & input array is not being considered.
  */
-public class Approach1 {
+public class ReverseAlgoLS {
 
 	/**
 	 * @param args
@@ -66,13 +66,10 @@ public class Approach1 {
 
 		// if no rotation is needed; don't do it
 		if(rotatePos != 0) {
-
 			// reverse A(0, d-1)
 			reverse(arr, 0, (rotatePos-1));
-
 			// reverse A(d, n-1)
 			reverse(arr, rotatePos, (n-1));
-
 			// reverse A(0, n-1)
 			reverse(arr, 0, (n-1));			
 		}

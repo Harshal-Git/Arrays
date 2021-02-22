@@ -17,6 +17,8 @@ import java.util.Arrays;
  *	-> Time complexity: O(n) - linear search for lowest element in the given array  
  *
  *	-> Space complexity: O(1) - apart from 1 variable; no other data structures are used.
+ *
+ *	-> Instead of returning lowest element, we can return index of the lowest element; which will be a rotation count for given array.
  */
 public class FindLowestElementAp1 {
 

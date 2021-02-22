@@ -28,7 +28,7 @@ import java.util.Arrays;
  *	-> Space complexity: O(n) - additional array of the same size as actual array; ignoring some variables
  *								used to calculate new index		
  */
-public class Approach3 {
+public class TempArrayRS {
 
 	/**
 	 * @param args

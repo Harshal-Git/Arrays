@@ -13,11 +13,11 @@ Array additional operations:
 
 Portals / Links: (check recent articles for latest updates / programs of that specific module)
 
-Basics: (done)
-	https://www.geeksforgeeks.org/array-data-structure/ 
+Basics:
+	https://www.geeksforgeeks.org/array-data-structure/ (Main link)
 
 Rotations:
-	https://www.geeksforgeeks.org/tag/rotation/
+	https://www.geeksforgeeks.org/tag/rotation/ (advance link)
 
 Rearrangements:
 	https://www.geeksforgeeks.org/array-data-structure/array-rearrangement/

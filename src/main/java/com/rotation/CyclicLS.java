@@ -23,7 +23,7 @@ import java.util.Arrays;
  *	-> Space complexity: O(1) - few variables to register first / last element; hence ignoring those. 		
  *
  */
-public class Approach4 {
+public class CyclicLS {
 
 	/**
 	 * @param args

@@ -8,28 +8,19 @@ d - positions to shift
 
 package: com.rotation.rotationBased
 
-1. Reverse array method [CHECK : is right shift possible?]
+1. Reverse array method 
 
-	reverse(A, 0, (d-1)) : reverse partial array from 0 --> (d-1)
-	reverse(A, d, (n-1)) : reverse partial array from d --> (n-1)
-	reverse(A, 0, (n-1)) : reverse complete array from 0 --> (n-1)
-	
-	Demo: Approach1.java (left shift)
+	Demo: ReverseAlgoLS.java / ReverseAlgoRS.java 
 	
 2. Temp array method (using additional array)
 
-	transfer data from main array (A) to new array (B) with a formula to 
-	calculate new index based on array length & shift position
-	
-	Demo: Approach2.java (left shift)
-	Demo: Approach3.java (right shift)
+	Demo: TempArrayLS.java / TempArrayRS.java 
 		
 3. By doing single shift / Cyclic rotation : d times
 	
 	Shift existing array by 1 position (left OR right); and repeat it for d times.
 	
-	Demo: Approach4.java (left shift)
-	Demo: Approach5.java (right shift)
+	Demo: CyclicLS.java / CyclicRS.java 
 	
 4. Block swap algo: (Skipped - complexity same as Reverse method)
 	
@@ -39,22 +30,21 @@ package: com.rotation.rotationBased
 
 package: com.rotation.rotationBased
 
-5. Find the lowest element from given sorted & rotated array:
+5. Find the lowest element OR rotation count from given sorted & rotated array:
 
 	https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
 	
-	Demo: FindLowestElementAp1.java  
-	Demo: FindLowestElementAp2.java 							
+	Demo: FindLowestElementAp1.java / FindLowestElementAp2.java 							
+		
+	Important: The approach#2 includes a method; which can be used to find a pivot element for sorted + rotated array 
+				with reference of binary search. Pivot element: Index of the lowest element. 
 	
+6. Search an element in a sorted and rotated array:
 
-6. Find rotation count on given rotated & sorted array:
-
-	https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/
+	https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
 	
-	Demo: FindRotationCountAp1.java 
-	Demo: FindRotationCountAp2.java 
+	Demo: SearchInRotatedAp1.java
 	
-7. Search an element in a sorted and rotated array: (pending)
+7. 	Given a sorted and rotated array, find if there is a pair with a given sum. (start)
 
-	https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/							
-	 
+	https://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/

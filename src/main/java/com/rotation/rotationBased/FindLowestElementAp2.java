@@ -16,9 +16,11 @@ import java.util.Arrays;
  *
  *	Approach 2: Binary search. 
  *
- *	-> Time complexity: [NEED TO CALCULATE]  
+ * -> Time complexity: [NEED TO CALCULATE]  
  *
- *	-> Space complexity: [NEED TO CALCULATE]
+ * -> Space complexity: [NEED TO CALCULATE]
+ *
+ * -> Instead of returning lowest element, we can return index of the lowest element; which will be a rotation count for given array.
  */
 public class FindLowestElementAp2 {
 
@@ -88,6 +90,9 @@ public class FindLowestElementAp2 {
 	 * @param start - start position
 	 * @param end - end position
 	 * @return return lowest element from given array
+	 * 
+	 * A method to find a pivot point for sorted + rotated array (inspired from binary search).
+	 * Pivot point: An index 'n' in the array; such that a(n) > a(n+1). 
 	 */
 	private static int findLowest(int[] data, int start, int end) {
 		// calculate mid position
