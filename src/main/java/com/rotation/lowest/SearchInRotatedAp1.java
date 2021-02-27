@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rotation.rotationBased;
+package com.rotation.lowest;
 
 import java.util.Arrays;
 
@@ -22,6 +22,10 @@ import java.util.Arrays;
  *	2. Divide given array from this pivot point & perform binary search on both arrays based on:
  *		If search element is lesser than max element; search in left part of the array.
  *		Else search in the right part of the array.
+ *
+ * -> Time complexity: O(n) - linear search for lowest element in the given array  
+ *
+ *	-> Space complexity: O(1) - apart from 1 variable; no other data structures are used.
  *	  
  */
 public class SearchInRotatedAp1 {

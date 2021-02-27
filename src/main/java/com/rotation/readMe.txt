@@ -6,7 +6,7 @@ d - positions to shift
 
 #########
 
-package: com.rotation.rotationBased
+package: com.rotation.lowest
 
 1. Reverse array method 
 
@@ -28,9 +28,9 @@ package: com.rotation.rotationBased
 
 #########
 
-package: com.rotation.rotationBased
+package: com.rotation.lowest
 
-5. Find the lowest element OR rotation count from given sorted & rotated array:
+1. Find the lowest element OR rotation count from given sorted & rotated array:
 
 	https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
 	
@@ -39,12 +39,27 @@ package: com.rotation.rotationBased
 	Important: The approach#2 includes a method; which can be used to find a pivot element for sorted + rotated array 
 				with reference of binary search. Pivot element: Index of the lowest element. 
 	
-6. Search an element in a sorted and rotated array:
+2. Search an element in a sorted and rotated array:
 
 	https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
 	
 	Demo: SearchInRotatedAp1.java
 	
-7. 	Given a sorted and rotated array, find if there is a pair with a given sum. (start)
+3. Search second lowest element: [PENDING]
+	
+	
+	
+#########
+	
+7. 	Given an array & find if there is a pair with a given sum. (start)
 
+	https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/
+	https://www.geeksforgeeks.org/given-two-unsorted-arrays-find-pairs-whose-sum-x/
+	https://www.geeksforgeeks.org/count-pairs-with-given-sum/
+	https://www.geeksforgeeks.org/count-pairs-difference-equal-k/
+	
+	Demo: FindSumPairAp1.java / FindSumPairAp2.java / FindSumPairAp3.java
+	
+	For Sorted + Rotated array
+	
 	https://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/
