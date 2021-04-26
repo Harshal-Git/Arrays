@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.basics;
+package com.basicsTheory;
 
 import java.util.Arrays;
 
@@ -41,7 +41,7 @@ public class CloningDemo1D {
 	 * @param intB
 	 */
 	private static void printData(String position, int[] intA, int[] intB) {
-		System.out.println("Arrays "+position+": ");
+		System.out.println("\nArrays "+position+": ");
 		System.out.println("A: "+Arrays.toString(intA));
 		System.out.println("B: "+Arrays.toString(intB));
 	}

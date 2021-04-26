@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rotation;
+package com.doRotation;
 
 import java.util.Arrays;
 
@@ -23,7 +23,7 @@ import java.util.Arrays;
  *	-> Space complexity: O(1) - few variables to register first / last element; hence ignoring those.
  *
  */
-public class CyclicRS {
+public class RotationByCyclicRS {
 
 	/**
 	 * @param args

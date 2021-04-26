@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.reverse;
+package com.reverseArray;
 
 import java.util.Arrays;
 

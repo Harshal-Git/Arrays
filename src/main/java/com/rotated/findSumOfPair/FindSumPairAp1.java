@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rotation.sumOfPair;
+package com.rotated.findSumOfPair;
 
 import java.util.Arrays;
 

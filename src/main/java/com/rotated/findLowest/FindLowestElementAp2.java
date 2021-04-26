@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rotation.lowest;
+package com.rotated.findLowest;
 
 import java.util.Arrays;
 

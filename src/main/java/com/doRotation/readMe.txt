@@ -6,21 +6,21 @@ d - positions to shift
 
 #########
 
-package: com.rotation.lowest
+package: com.rotated.findLowest
 
 1. Reverse array method 
 
-	Demo: ReverseAlgoLS.java / ReverseAlgoRS.java 
+	Demo: RotationByReverseAlgoLS.java / RotationByReverseAlgoRS.java 
 	
 2. Temp array method (using additional array)
 
-	Demo: TempArrayLS.java / TempArrayRS.java 
+	Demo: RotationByTempArrayLS.java / RotationByTempArrayRS.java 
 		
 3. By doing single shift / Cyclic rotation : d times
 	
 	Shift existing array by 1 position (left OR right); and repeat it for d times.
 	
-	Demo: CyclicLS.java / CyclicRS.java 
+	Demo: RotationByCyclicLS.java / RotationByCyclicRS.java 
 	
 4. Block swap algo: (Skipped - complexity same as Reverse method)
 	
@@ -28,7 +28,7 @@ package: com.rotation.lowest
 
 #########
 
-package: com.rotation.lowest
+package: com.rotated.findLowest
 
 1. Find the lowest element OR rotation count from given sorted & rotated array:
 
@@ -46,7 +46,6 @@ package: com.rotation.lowest
 	Demo: SearchInRotatedAp1.java
 	
 3. Search second lowest element: [PENDING]
-	
 	
 	
 #########

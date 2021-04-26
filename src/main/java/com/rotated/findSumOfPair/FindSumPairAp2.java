@@ -1,34 +1,41 @@
 /**
  * 
  */
-package com.rotation.sumOfPair;
+package com.rotated.findSumOfPair;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
 /**
  * @author Harshal-Git
  *
  *	Find pairs of elements with given sum.
  *	
- *	Approach:  Hashing method
+ *	Approach:  Sort given array & then using 2 pointer methods
  *	
- *	Algo: For each element from given array {
- *			find remainder for each element (sum - array[index] element)
- *			if this remainder does not exist in the hash data structure; insert into it
- *			otherwise return the array[index] element & remainder as required pair
- *		  }
+ *			Algo: Sort(array);
  *
- * -> Time complexity: 	  O(n) - to iterate over all array elements
- * 						+ O(1) - to insert / check whether element exist in hash data structure
- * 				   Total: O(n) - considering iteration over all elements once
+ *				  create pointers: start, end
  *
- * -> Space complexity: O(n) - for preparing a hash data structure
+ *				  if(data at start + data at end) == sum
+ *						return pair;
+ *						start++;
+ *						end--;
+ *				  else if (data at start + data at end) < sum
+ *						start++;
+ *				  else 
+ *						end--;
  *
- * -> This algo won't return same element pairing (if any).
+ * -> Drawback: It can return the same element paired with itself. (if any sum is given like that).
+ *
+ * -> Time complexity:  O(n Log n) - for sorting (based on sorting algo)
+ * 					  + O(n) - for two pointer traversal of array
+ * 				Total: O(n) + O(n Log n) ~ O(n Log n) : considering highest term 
+ * 				(a marginal difference between O(n Log n) & O(n) : for lower values of n.) 
+ *
+ * -> Space complexity: O(n) - ignoring string builder variable (used only for data population); separate array used for sorting
+ *
  */
-public class FindSumPairAp3 {
-
+public class FindSumPairAp2 {
 	/**
 	 * @param args
 	 */
@@ -41,7 +48,7 @@ public class FindSumPairAp3 {
 		runCase(new int[] {1, 4, 45, 6, 10, -8}, 16);
 
 		// case 3
-		runCase(new int[] {1, -2, 1, 0, 5}, 0);
+		runCase(new int[] {1, -2, 1, 0, 5}, 4);
 	}
 
 	/**
@@ -67,8 +74,6 @@ public class FindSumPairAp3 {
 	 * @return - boolean status whether pairs are found OR not
 	 */
 	private static boolean findSumPairs(int[] data, int sum, StringBuilder pairs) {
-		// hash data structure to store elements
-		HashSet<Integer> elementsSet = new HashSet<>();
 		boolean pairsFound = false;
 		// input validation
 		if(data == null) {
@@ -77,17 +82,26 @@ public class FindSumPairAp3 {
 		if(data.length == 1) {
 			pairsFound = false;
 		} else {
-			// iterate over all elements of given array
-			for(int index = 0; index < data.length; index++) {
-				// find remainder which should be there in hash data structure
-				int remainderToCheck = sum - data[index];
-				// if remainder exist in hash data structure; pair found
-				if(elementsSet.contains(remainderToCheck)) {
+			// sort given array
+			Arrays.sort(data);
+			
+			// get 2 pointers and find pair having given sum
+			int start = 0;
+			int end = (data.length-1);
+			
+			while(start <= end) {
+				if((data[start]+data[end]) == sum) {
 					// if pair found
-					pairs.append(data[index]).append(" : ").append(remainderToCheck).append(", ");
-					pairsFound = true;
+					pairs.append(data[start]).append(" : ").append(data[end]).append(", ");
+					start++;
+					end--;
+					pairsFound= true;
+				} else if((data[start]+data[end]) < sum) {
+					// if sum is found lower than the given pair, move start pointer to next position
+					start++;
 				} else {
-					elementsSet.add(data[index]);
+					// if sum is higher than the given pair, move end pointer to previous position
+					end--;
 				}
 			}
 		}

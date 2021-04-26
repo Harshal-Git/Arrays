@@ -1,34 +1,34 @@
 /**
  * 
  */
-package com.rotation;
+package com.doRotation;
 
 import java.util.Arrays;
 
 /**
  * @author Harshal-Git
  *
- *	-> a function rotate(array, d, n) to rotate the given array to left
+ *	-> a function rotate(array, d, n) to rotate the given array to right 
  *	
  *		array: array to be rotated
  *		d: rotate positions (some positive value)
  *		n: array length
  *
- *	-> Approach: Reverse array method (for left shift only)
+ *	-> Approach: Reverse array method (for right shift only)
  *		
+ *		reverse(A, 0, (n-1)) : reverse complete array from 0 --> (n-1)
  *		reverse(A, 0, (d-1)) : reverse partial array from 0 --> (d-1)
  *		reverse(A, d, (n-1)) : reverse partial array from d --> (n-1)
- *		reverse(A, 0, (n-1)) : reverse complete array from 0 --> (n-1) 
  *
- *	-> Time complexity: O(n)	: O(d-1)       ~ O(n) - for 0 --> (d-1)   
- *								+ O((n-1) - d) ~ O(n) - for d --> (n-1)
- *								+ O(n-1)       ~ O(n) - for 0 --> (n-1) 
+ *	-> Time complexity: O(n)	: O(n-1)       ~ O(n) - for 0 --> (n-1)
+ *								+ O(d-1)       ~ O(n) - for 0 --> (d-1)   
+ *								+ O((n-1) - d) ~ O(n) - for d --> (n-1) 
  *					   --> Total= O(3n) 	   ~ O(n) - ignoring constants
  *
  *	-> Space complexity: O(1) - considering additional int variables are used; their assignments 
  *								taking constant time & input array is not being considered.
  */
-public class ReverseAlgoLS {
+public class RotationByReverseAlgoRS {
 
 	/**
 	 * @param args
@@ -53,7 +53,7 @@ public class ReverseAlgoLS {
 	}
 
 	/**
-	 * rotate given array to left by given position
+	 * rotate given array to right by given position
 	 * @param arr - array
 	 * @param d - shift positions
 	 * @param n - array length (don't adjust to n-1)
@@ -66,12 +66,12 @@ public class ReverseAlgoLS {
 
 		// if no rotation is needed; don't do it
 		if(rotatePos != 0) {
+			// reverse A(0, n-1)
+			reverse(arr, 0, (n-1));
 			// reverse A(0, d-1)
 			reverse(arr, 0, (rotatePos-1));
 			// reverse A(d, n-1)
 			reverse(arr, rotatePos, (n-1));
-			// reverse A(0, n-1)
-			reverse(arr, 0, (n-1));			
 		}
 	}
 

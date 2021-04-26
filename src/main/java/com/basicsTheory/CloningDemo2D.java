@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.basics;
+package com.basicsTheory;
 
 import java.util.Arrays;
 
