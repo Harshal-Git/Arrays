@@ -1,9 +1,9 @@
 # Arrays
 Arrays programs
 
- * -> Time complexity:	0(n)
- * -> Space complexity:	0(n)
- * -> Auxiliary space:  0(n)
+ * -> Time complexity:	
+ * -> Space complexity:	
+ * -> Auxiliary space:  
 
 ###
 Array additional operations:
