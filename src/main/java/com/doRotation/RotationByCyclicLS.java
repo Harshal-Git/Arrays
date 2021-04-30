@@ -20,8 +20,9 @@ import java.util.Arrays;
  *								* O(n) - perform single shift 
  *					   --> Total= O(d * n) ~ O(n^2) - taking highest range
  *
- *	-> Space complexity: O(1) - few variables to register first / last element; hence ignoring those. 		
- *
+ *	-> Space complexity: O(1)  		
+ *	
+ *	-> Auxiliary space : 0(1)
  */
 public class RotationByCyclicLS {
 

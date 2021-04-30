@@ -27,6 +27,8 @@ import java.util.Arrays;
  *
  *	-> Space complexity: O(1) - considering additional int variables are used; their assignments 
  *								taking constant time & input array is not being considered.
+ *
+ *	-> Auxiliary space : 0(1)
  */
 public class RotationByReverseAlgoRS {
 

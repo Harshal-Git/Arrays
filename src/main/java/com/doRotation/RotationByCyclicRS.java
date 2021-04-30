@@ -22,6 +22,7 @@ import java.util.Arrays;
  *
  *	-> Space complexity: O(1) - few variables to register first / last element; hence ignoring those.
  *
+ *	-> Auxiliary space : 0(1)
  */
 public class RotationByCyclicRS {
 

@@ -27,6 +27,8 @@ import java.util.Arrays;
  *
  *	-> Space complexity: O(n) - additional array of the same size as actual array; ignoring some variables
  *								used to calculate new index		
+ *
+ *	-> Auxiliary space : 0(1)
  */
 public class RotationByTempArrayRS {
 

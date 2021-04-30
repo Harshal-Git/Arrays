@@ -30,7 +30,9 @@ import java.util.Arrays;
  *					   --> Total= O(2n) ~ O(n) - ignoring constants
  *
  *	-> Space complexity: O(n) - additional array of the same size as actual array; ignoring some variables
- *								used to calculate new index   
+ *								used to calculate new index
+ *
+ *	-> Auxiliary space : 0(n)
  */
 public class RotationByTempArrayLS {
 
