@@ -27,7 +27,7 @@ import java.util.Arrays;
  * -> Space complexity:	0(n)
  * -> Auxiliary space:	0(1)
  */
-public class NaiveApproach {
+public class StandardApproach {
 
 	/**
 	 * @param args
@@ -49,6 +49,14 @@ public class NaiveApproach {
 		int [] data4 = {10};
 		System.out.println("\nArray: "+Arrays.toString(data4));
 		printFrequency(data4);
+		
+		int [] data5 = {10, 10, 10, 10, 30, 30, 30, 40, 40, 50};
+		System.out.println("\nArray: "+Arrays.toString(data5));
+		printFrequency(data5);
+		
+		int [] data6 = {10, 10, 40, 50, 50};
+		System.out.println("\nArray: "+Arrays.toString(data6));
+		printFrequency(data6);
 	}
 
 	/**
