@@ -12,7 +12,8 @@ import java.util.Arrays;
  *
  *	-> base line: sub array - all possible combination of consecutive elements 
  *
- *		ex: sub array of {1, 2, 3} => {1}, {2}, {3}, {1, 2}, {2, 3}, {1, 2, 3} [{1, 3} cannot be sub array as they are not consecutive]
+ *		ex: sub array of {1, 2, 3} => {1}, {2}, {3}, {1, 2}, {2, 3}, {1, 2, 3} [{1, 3} cannot be sub array as they are 
+ *																				not consecutive]
  *
  *	ex: 
  *		i/p = {2, 3, -8, 7, -1, 2, 3}	=> o/p = 11
