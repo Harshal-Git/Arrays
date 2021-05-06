@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  *	-> find frequency of elements from given sorted array
  *
- *	-> naive approach : predefine last traversed element & initial count. Traverse through all elements and 
+ *	-> standard approach : predefine last traversed element & initial count. Traverse through all elements and 
  *						if current elements matches last traversed elements: then
  *								increment count
  *						else if current element doesn't match last traversed element: then
