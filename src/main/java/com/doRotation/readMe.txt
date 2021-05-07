@@ -38,16 +38,7 @@ package: com.rotated.findLowest
 		
 	Important: The approach#2 includes a method; which can be used to find a pivot element for sorted + rotated array 
 				with reference of binary search. Pivot element: Index of the lowest element. 
-	
-2. Search an element in a sorted and rotated array:
-
-	https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
-	
-	Demo: SearchInRotatedAp1.java
-	
-3. Search second lowest element: [PENDING]
-	
-	
+		
 #########
 	
 7. 	Given an array & find if there is a pair with a given sum. (start)

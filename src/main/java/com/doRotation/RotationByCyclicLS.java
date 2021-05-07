@@ -19,9 +19,7 @@ import java.util.Arrays;
  *  -> Time complexity: O(n^2)	: O(d) - for calling single shift d times   
  *								* O(n) - perform single shift 
  *					   --> Total= O(d * n) ~ O(n^2) - taking highest range
- *
  *	-> Space complexity: O(1)  		
- *	
  *	-> Auxiliary space : 0(1)
  */
 public class RotationByCyclicLS {

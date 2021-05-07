@@ -24,10 +24,8 @@ import java.util.Arrays;
  *	-> Time complexity: O(n)	: O(n) - for new position calculation & putting data into temp array   
  *								+ O(n) - to put elements from temp to original array 
  *					   --> Total= O(2n) ~ O(n) - ignoring constants
- *
  *	-> Space complexity: O(n) - additional array of the same size as actual array; ignoring some variables
  *								used to calculate new index		
- *
  *	-> Auxiliary space : 0(1)
  */
 public class RotationByTempArrayRS {

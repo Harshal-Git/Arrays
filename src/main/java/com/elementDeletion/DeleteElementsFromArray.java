@@ -27,7 +27,6 @@ import java.util.Arrays;
  * -> Time complexity:	O(n) : for search + O(n) : for shift = O(2n) ~ O(n)
  * 		-> Deletion from the beginning : 0(n)
  * 		-> Deletion at the end : 0(1)
- * 
  * -> Space complexity:	0(n) [includes the whole array]
  * -> Auxiliary space:  0(1) [additional storage elements]
  * 

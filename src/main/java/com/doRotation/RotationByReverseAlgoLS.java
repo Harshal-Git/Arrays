@@ -24,10 +24,8 @@ import java.util.Arrays;
  *								+ O((n-1) - d) ~ O(n) - for d --> (n-1)
  *								+ O(n-1)       ~ O(n) - for 0 --> (n-1) 
  *					   --> Total= O(3n) 	   ~ O(n) - ignoring constants
- *
  *	-> Space complexity: O(1) - considering additional int variables are used; their assignments 
  *								taking constant time & input array is not being considered.
- *
  *	-> Auxiliary space : 0(1)
  */
 public class RotationByReverseAlgoLS {
