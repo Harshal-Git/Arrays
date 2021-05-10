@@ -1,20 +1,18 @@
 /**
  * 
  */
-package com.rotated.findSumOfPair;
+package com.findPairWithGivenSum;
 
 import java.util.Arrays;
 
 /**
  * @author Harshal-Git
  *
- *	Find pairs of elements with given sum.
+ * -> Find pairs of elements with given sum.
  *	
- *	Approach:  Sort given array & then using 2 pointer methods
+ *	Approach:  If given array is sorted then this is the best solution.
  *	
- *			Algo: Sort(array);
- *
- *				  create pointers: start, end
+ *			Algo: create pointers: start, end
  *
  *				  if(data at start + data at end) == sum
  *						return pair;
@@ -31,11 +29,10 @@ import java.util.Arrays;
  * 					  + O(n) - for two pointer traversal of array
  * 				Total: O(n) + O(n Log n) ~ O(n Log n) : considering highest term 
  * 				(a marginal difference between O(n Log n) & O(n) : for lower values of n.) 
- *
  * -> Space complexity: O(n) - ignoring string builder variable (used only for data population); separate array used for sorting
- *
+ * -> Auxiliary space: O(1) 
  */
-public class FindSumPairAp2 {
+public class FindSumPairAp3 {
 	/**
 	 * @param args
 	 */
@@ -48,7 +45,22 @@ public class FindSumPairAp2 {
 		runCase(new int[] {1, 4, 45, 6, 10, -8}, 16);
 
 		// case 3
-		runCase(new int[] {1, -2, 1, 0, 5}, 4);
+		runCase(new int[] {1, -2, 1, 0, 5}, 0);
+		
+		// case 4
+		runCase(new int[] {3, 5, 9, 2, 8, 10, 11}, 17);
+		
+		// case 5
+		runCase(new int[] {8, 4, 6}, 11);
+		
+		// case 6
+		runCase(new int[] {2, 5, 8, 12, 30}, 17);
+		
+		// case 7
+		runCase(new int[] {3, 8, 13, 18}, 14);
+		
+		// case 8
+		runCase(new int[] {2, 4, 8, 9, 11, 12, 20, 30}, 23);
 	}
 
 	/**
@@ -60,9 +72,9 @@ public class FindSumPairAp2 {
 		StringBuilder pairs = new StringBuilder();
 		boolean pairsFound = findSumPairs(data, sum, pairs);
 		if(pairsFound) {
-			System.out.println("Array: "+Arrays.toString(data)+" has pair/s: ("+pairs.toString()+") which has sum: "+sum+".");
+			System.out.println("\nArray: "+Arrays.toString(data)+" has pair/s: ("+pairs.toString()+") which has sum: "+sum+".");
 		} else {
-			System.out.println("No pair found in array: "+Arrays.toString(data)+" which has sum: "+sum+".");
+			System.out.println("\nNo pair found in array: "+Arrays.toString(data)+" which has sum: "+sum+".");
 		}
 	}
 
@@ -82,13 +94,11 @@ public class FindSumPairAp2 {
 		if(data.length == 1) {
 			pairsFound = false;
 		} else {
-			// sort given array
-			Arrays.sort(data);
-			
+
 			// get 2 pointers and find pair having given sum
 			int start = 0;
 			int end = (data.length-1);
-			
+
 			while(start <= end) {
 				if((data[start]+data[end]) == sum) {
 					// if pair found

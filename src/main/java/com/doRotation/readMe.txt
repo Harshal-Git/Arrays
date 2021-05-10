@@ -41,7 +41,7 @@ package: com.rotated.findLowest
 		
 #########
 	
-7. 	Given an array & find if there is a pair with a given sum. (start)
+7. 	Given an array & find if there is a pair with a given sum. (com.findPairWithGivenSum)
 
 	https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/
 	https://www.geeksforgeeks.org/given-two-unsorted-arrays-find-pairs-whose-sum-x/

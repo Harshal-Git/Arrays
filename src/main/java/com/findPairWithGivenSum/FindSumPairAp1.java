@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rotated.findSumOfPair;
+package com.findPairWithGivenSum;
 
 import java.util.Arrays;
 
@@ -10,14 +10,12 @@ import java.util.Arrays;
  *
  *	Find pairs of elements with given sum.
  *	
- *	Approach: Basic approach : comparing each element with it's own & all remaining elements on it's right. 
- *
- *	Assumptions: No need of sorted array, no cautions about repeated elements. 
+ *	-> Approach: Basic approach : comparing each element with it's own & all remaining elements on it's right. 
  *
  * -> Time complexity: O(n^2) - linear search twice for the given array  .
- *
  * -> Space complexity: O(1) - ignoring string builder variable (used only for data population); has no other additional data structure.
- *
+ * -> Auxiliary space : O(1) 
+ * 
  * -> This algo won't return same element pairing (if any).
  */
 public class FindSumPairAp1 {
@@ -35,6 +33,21 @@ public class FindSumPairAp1 {
 
 		// case 3
 		runCase(new int[] {1, -2, 1, 0, 5}, 0);
+		
+		// case 4
+		runCase(new int[] {3, 5, 9, 2, 8, 10, 11}, 17);
+		
+		// case 5
+		runCase(new int[] {8, 4, 6}, 11);
+		
+		// case 6
+		runCase(new int[] {2, 5, 8, 12, 30}, 17);
+		
+		// case 7
+		runCase(new int[] {3, 8, 13, 18}, 14);
+		
+		// case 8
+		runCase(new int[] {2, 4, 8, 9, 11, 12, 20, 30}, 23);
 	}
 
 	/**
@@ -46,9 +59,9 @@ public class FindSumPairAp1 {
 		StringBuilder pairs = new StringBuilder();
 		boolean pairsFound = findSumPairs(data, sum, pairs);
 		if(pairsFound) {
-			System.out.println("Array: "+Arrays.toString(data)+" has pair/s: ("+pairs.toString()+") which has sum: "+sum+".");
+			System.out.println("\nArray: "+Arrays.toString(data)+" has pair/s: ("+pairs.toString()+") which has sum: "+sum+".");
 		} else {
-			System.out.println("No pair found in array: "+Arrays.toString(data)+" which has sum: "+sum+".");
+			System.out.println("\nNo pair found in array: "+Arrays.toString(data)+" which has sum: "+sum+".");
 		}
 	}
 
