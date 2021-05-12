@@ -6,7 +6,7 @@ d - positions to shift
 
 #########
 
-package: com.rotated.findLowest
+package: com.findLowestInSortedAndRotated
 
 1. Reverse array method 
 
@@ -28,7 +28,7 @@ package: com.rotated.findLowest
 
 #########
 
-package: com.rotated.findLowest
+package: com.findLowestInSortedAndRotated
 
 1. Find the lowest element OR rotation count from given sorted & rotated array:
 

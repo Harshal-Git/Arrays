@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.prefixNsuffixSumTech;
+package com.prefixNsuffixSum;
 
 import java.util.Arrays;
 
