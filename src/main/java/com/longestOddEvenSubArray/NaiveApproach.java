@@ -10,11 +10,12 @@ import java.util.Arrays;
  *
  *	-> find longest sub array with odd/even alternate data
  *
- *	-> naive approach: for each element, find sub array which has max length & all elements in alternate ODD/EVEN sequence.
- *						keep track of the most recent max element & at the end, return the highest length.
+ *	-> naive approach: for each element, find a sub array from it's next position till the end and check whether the ODD/EVEN or 
+ *						EVEN/OOD pattern is followed? If followed, maintain a counter for max length and keep checking the max length
+ *						observed till now.
  *
  * 	-> ex:
- * 			i/p: {10, 12, 14, 7, 8}	=> o/p : 3 (from 3 to 5)
+ * 			i/p: {10, 12, 14, 7, 8}	=> o/p : 3 (from position 3 to 5)
  * 
  * 			i/p: {7, 10, 13, 14}	=> o/p : 4 
  * 

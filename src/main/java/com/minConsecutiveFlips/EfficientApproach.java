@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.maxConsecutiveFlips;
+package com.minConsecutiveFlips;
 
 import java.util.Arrays;
 

@@ -9,7 +9,8 @@ import java.util.Arrays;
  * @author Harshal-Git
  *
  *	-> find maximum sum of circular sub array 
- *	-> circular sub array can be found by connecting last element back to the first element and finding resulting sub arrays
+ *	-> circular sub array can be found by connecting last element back to the first element and finding resulting sub arrays. This 
+ *		iteration will be valid till we reach back to the same element.
  *	
  *	{10, 5, -5} => circular sub arrays = {10}, {5}, {-5}, {10, 5}, {5, -5}, {-5, 10}, {10, 5, -5}, {5, -5, 10}, {-5, 10, 5}
  *

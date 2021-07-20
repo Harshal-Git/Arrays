@@ -33,17 +33,23 @@ public class StandardApproach {
 	 */
 	public static void main(String[] args) {
 
-		int [] data1 = {0, 1, 1, 0, 1, 0};
+		int [] data1 = {0, 1, 1, 0, 1, 1, 1, 0};
 		System.out.println("Array: "+Arrays.toString(data1)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data1));
-		
+
 		int [] data2 = {1, 1, 1, 1};
 		System.out.println("Array: "+Arrays.toString(data2)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data2));
-		
+
 		int [] data3 = {0, 0, 0, 0};
 		System.out.println("Array: "+Arrays.toString(data3)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data3));
-		
+
 		int [] data4 = {1, 0, 1, 1, 1, 1, 0, 1, 1};
 		System.out.println("Array: "+Arrays.toString(data4)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data4));
+		
+		int [] data5 = {1, 0, 0, 0};
+		System.out.println("Array: "+Arrays.toString(data5)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data5));
+		
+		int [] data6 = {0, 0, 0, 1};
+		System.out.println("Array: "+Arrays.toString(data6)+" -> Maximum consecutive 1s is/are: "+findMaxConsecutive1s(data6));
 	}
 
 	/**
@@ -51,33 +57,21 @@ public class StandardApproach {
 	 * @return
 	 */
 	private static int findMaxConsecutive1s(int[] data) {
-		int maxCount = 0;
+		int maxConsecutiveCount = 0;
 		int size = data.length;
-		int tempCount = 0;
+		int consecutiveCount = 0;
 		// iterate through all elements
 		for(int index = 0; index < size; index++) {
-			if(data[index] == 0) {
-				// check and assign count values accordingly
-				if(maxCount < tempCount) {
-					maxCount = tempCount;
-				}
-				// reset temp count when 0 is encountered
-				tempCount = 0;
+			// if 1 encountered
+			if(data[index] == 1) {
+				consecutiveCount++;
 			} else {
-				// increment temp count
-				tempCount++;
+				consecutiveCount = 0;
 			}
+			// at each step; find maximum consecutive length found
+			maxConsecutiveCount = (maxConsecutiveCount > consecutiveCount)? maxConsecutiveCount : consecutiveCount;
 		}
-		return getMax(maxCount, tempCount);
+		// return heightst consecutive count
+		return maxConsecutiveCount;
 	}
-
-	/**
-	 * @param maxCount
-	 * @param tempCount
-	 * @return
-	 */
-	private static int getMax(int maxCount, int tempCount) {
-		return ((maxCount < tempCount) ? (tempCount) : (maxCount));
-	}
-
 }
