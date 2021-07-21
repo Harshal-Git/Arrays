@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.slidingWindowTech;
+package com.slidingWindow.subArrayExistWithGivenSum;
 
 import java.util.Arrays;
 
@@ -83,15 +83,11 @@ public class FindSubArrayExistEfficientAP {
 
 			// if window sum is smaller than sum
 			if(windowSum < sum) {
-				windowSum += data[startIndex];
-				startIndex++;
+				windowSum += data[startIndex++];
 			} else if (windowSum > sum){
-
 				// if window sum is higher than sum : delete element from initial position
-				windowSum -= data[deleteIndex];
-				deleteIndex++;
+				windowSum -= data[deleteIndex++];
 			} else {
-
 				// if we found required sum
 				return "Yes";
 			}

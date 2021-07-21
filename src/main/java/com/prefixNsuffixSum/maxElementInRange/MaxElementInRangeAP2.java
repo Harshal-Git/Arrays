@@ -8,8 +8,11 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> efficient approach : preparing an array of frequencies and finding the index of max frequency. The index of frequency 
- *							array will represent the values of range and array value will represent frequency. 
+ *	-> efficient approach : use an fixed size array to store the frequency of elements obtained from given range. 
+ *
+ * 		Trick here is the way start number & end number is stored in the frequency array. 
+ * 
+ * 		It is done so that when prefix sum of the array is done; it will immediately reflect the exact frequency of the elements.  
  *
  *
  *	-> base line : the array for storing frequencies needs to be more than the highest number of among ranges.
@@ -30,13 +33,16 @@ public class MaxElementInRangeAP2 {
 	 */
 	public static void main(String[] args) {
 
-		int [] leftRange1 = {1, 2, 3};
-		int [] rightRange1 = {3, 5, 7};
-		printMessage(leftRange1, rightRange1);
+		int [] leftRange = null;
+		int [] rightRange = null;
 
-		int [] leftRange2 = {1, 2, 5, 15};
-		int [] rightRange2 = {5, 8, 7, 18};
-		printMessage(leftRange2, rightRange2);
+		leftRange = new int[] {1, 2, 3};
+		rightRange = new int[] {3, 5, 7};
+		printMessage(leftRange, rightRange);
+
+		leftRange = new int[] {1, 2, 5, 15};
+		rightRange = new int[] {5, 8, 7, 18};
+		printMessage(leftRange, rightRange);
 
 	}
 
@@ -62,25 +68,26 @@ public class MaxElementInRangeAP2 {
 		int size = leftRange.length;
 
 		// fix sized array
-		int [] prefixSumArr = new int[MAX_SIZE];
+		int [] freqArr = new int[MAX_SIZE];
 
 		// set flags at the position of ranges value 
 		for(int index = 0; index < size; index++) {
-			prefixSumArr[leftRange[index]]++;
-			prefixSumArr[(rightRange[index]+1)]--;
+			freqArr[leftRange[index]]++;			// TRICK PART (freqArr[begin_value]++)
+			freqArr[(rightRange[index]+1)]--;		// TRICK PART (freqArr[end_value+1]--)
+			//System.out.println("Freq arr: "+Arrays.toString(freqArr));
 		}
-		//System.out.println("Prefix sum: "+Arrays.toString(prefixSumArr));
 
 		// initialize max array
-		int max = prefixSumArr[0];
+		int max = freqArr[0];
 		int result = 0;
 
-		// prepare a prefix sum of the array with set flag  
+		// prepare a prefix sum of the frequency array with set flag  
 		// values and find max element from the prefix sum
 		for(int index = 1; index < MAX_SIZE; index++) {
-			prefixSumArr[index] += prefixSumArr[index-1];
-			if(max < prefixSumArr[index]) {
-				max = prefixSumArr[index];
+			freqArr[index] += freqArr[index-1];
+			//System.out.println("Prefix freq arr: "+Arrays.toString(freqArr));
+			if(max < freqArr[index]) {
+				max = freqArr[index];
 				result = index;
 			}
 		}

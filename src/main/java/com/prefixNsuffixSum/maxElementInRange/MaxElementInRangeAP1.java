@@ -14,8 +14,8 @@ import java.util.Map;
 /**
  * @author Harshal-Git
  *
- *	-> 2 arrays given Left & Right points. Elements at same index in both arrays represents a whole range of numbers between them 
- *		including range elements also.
+ *	-> 2 arrays given Left & Right points. Elements at same index in both arrays represents a whole range of numbers between 
+ *		them including range elements also.
  *		
  *		We need to find max occurring element from all those ranges.
  *
@@ -24,8 +24,10 @@ import java.util.Map;
  *
  *		o/p => 5
  *
- *		Range1 = {1, 2, 3, 4, 5}, Range2 = {2, 3, 4, 5, 6, 7, 8}, 
- *		Range3 = {5, 6, 7}, Range4 = {15, 16, 17, 18}	=> max occurring element in all ranges is 5
+ *		Range1 = {1, 2, 3, 4, 5}, 
+ *		Range2 = {2, 3, 4, 5, 6, 7, 8}, 
+ *		Range3 = {5, 6, 7}, 
+ *		Range4 = {15, 16, 17, 18}	=> max occurring element in all ranges is 5
  *
  *  -> naive solution : iterate through all ranges & count frequency of all elements. use hashing to store this frequency.
  *  					at the end, return element with highest frequency. 
@@ -59,7 +61,7 @@ public class MaxElementInRangeAP1 {
 		System.out.println("Right range: "+Arrays.toString(rightRange));
 		System.out.println("Max occurring element: "+findMaxOccurringElement(leftRange, rightRange));
 	}
-	
+
 	/**
 	 * @param leftRange
 	 * @param rightRange
@@ -74,14 +76,10 @@ public class MaxElementInRangeAP1 {
 		for(int index = 0; index < size; index++) {
 			// prepare numbers starting from left range till right range including the ranges
 			for(int range = leftRange[index]; range <= rightRange[index]; range++) {
-				// if element doesn't exist in the map; add newly
-				if(!frequencyMap.containsKey(range)) {
-					frequencyMap.put(range, 1);
-				} else {
-					// if element exist; increment existing frequency
-					int freq = frequencyMap.get(range);
-					frequencyMap.put(range, (++freq));
-				}
+				// if current range doesn't exist in the map; add that range 
+				// with frequency = 0 otherwise increment existing frequency
+				int oldVal = frequencyMap.getOrDefault(range, 0).intValue();
+				frequencyMap.put(range, (++oldVal));
 			}
 		}
 		// find max frequency element from given map

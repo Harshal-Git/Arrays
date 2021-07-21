@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.slidingWindowTech;
+package com.slidingWindow.maxSumOfGiven_K_SubArray;
 
 import java.util.Arrays;
 
@@ -10,8 +10,8 @@ import java.util.Arrays;
  *
  *	-> given an array of integers & a number 'k'. find maximum sum of 'k' consecutive elements.
  *
- *	-> efficient approach : first find sum of 'k' elements. Then in linear manner, remove first element & add next 
- *							element to find sum of next 'k' elements; continue until max sum is found. 
+ *	-> naive approach : for each element, find sum of elements starting from that element till 'k'. And keep record
+ *						of such sum to find max sum.
  *
  *	ex:
  *
@@ -19,12 +19,12 @@ import java.util.Arrays;
  *
  *		i/p: {5, -10, 6, 90, 3} & k = 2	=> o/p : 96 (6+90)
  *
- * -> Time complexity:	0(k) + 0(n-k) ~ 0(n)
+ * -> Time complexity:	O(n^2)
  * -> Space complexity:	0(n)
  * -> Auxiliary space:  0(1)
  * 
  */
-public class PrintMaxSumAP2 {
+public class PrintMaxSumAP1 {
 
 	/**
 	 * @param args
@@ -58,24 +58,29 @@ public class PrintMaxSumAP2 {
 	 * @return
 	 */
 	private static int findMaxConsecutiveSum(int[] data, int k) {
-
-		// initial elements
-		int firstWindowSum = 0;
-		int size = data.length;
-
-		// find first 'k' elements sum
-		for(int index = 0; index < k; index++) {
-			firstWindowSum += data[index];
-		}
-
-		// define max sum from first window sum
-		int maxSum = firstWindowSum;
 		
-		// start adding & subtracting remaining elements and keep 
-		// shifting window towards right & finding maximum sum
-		for(int index = k; index < size; index++) {
-			firstWindowSum += (data[index] - (data[index-k]));
-			maxSum = findMax(maxSum, firstWindowSum);
+		// initial elements
+		int maxSum = data[0];
+		int subArraySum = data[0];
+		
+		int size = data.length;
+		int consecutiveCount = 0;
+
+		// for each element: 
+		for(int index = 0; index < (size-(k-1)); index++) {
+
+			// reset values for new sub array
+			consecutiveCount = 0;
+			subArraySum = 0;
+
+			// calculate sum of (i+k) elements for current index
+			while(consecutiveCount < k) {
+				subArraySum += data[(index+consecutiveCount)];
+				consecutiveCount++;
+			}
+
+			// find max of previous sum & current sub array sum
+			maxSum = findMax(maxSum, subArraySum);
 		}
 		return maxSum;
 	}

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.slidingWindowTech;
+package com.slidingWindow.subArrayExistWithGivenSum;
 
 import java.util.Arrays;
 
