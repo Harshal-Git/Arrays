@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.prefixNsuffixSum;
+package com.prefixNsuffixSum.checkEquilibrium;
 
 import java.util.Arrays;
 
@@ -14,8 +14,13 @@ import java.util.Arrays;
  *						If there are no elements on either side then sum can be considered as 0. Here that particular
  *						element will not be considered in sum. 
  *
- *	-> efficient solution : find prefix & suffix sum and for all array elements. Iterate both arrays & the point where they both 
- *							are found same; that's equilibrium point of the given array.
+ *	-> efficient solution 2 : calculate total array sum first. 
+ *			
+ *		Now starting from the left most element; check the left sum (initially it will be 0) and 
+ *		right sum (total sum - current array element). If they are found same, then that's the equilibrium point. 
+ 		
+ 		If not same, then update the left sum by adding current element & delete current element from total sum.
+ 		(as we are moving towards right to process pending elements only; no need to add new element back to the total sum.)
  *
  *	ex: 
  *		i/p : {3, 4, 8, -9, 20, 6}	=> o/p : Yes (left side sum of 20 = right side sum of 20)
@@ -24,12 +29,12 @@ import java.util.Arrays;
  *
  *		i/p : {4, 2, 2}	=> o/p : No (No element is in equilibrium point for given array)
  *
- * -> Time complexity:	O(n) + O(n) + O(n) = O(3*n) ~ O(n)
- * -> Space complexity:	0(n) + 0(n) = 0(2*n) ~ 0(n)
- * -> Auxiliary space:  0(n) + 0(n) = 0(2*n) ~ 0(n)
+ * -> Time complexity:	O(n) + O(n) = O(2*n) ~ O(n)
+ * -> Space complexity:	O(n)
+ * -> Auxiliary space:  O(1)
  * 
  */
-public class CheckEquilibriumAP2 {
+public class CheckEquilibriumAP3 {
 
 	/**
 	 * @param args
@@ -58,35 +63,32 @@ public class CheckEquilibriumAP2 {
 	 * @return
 	 */
 	private static String hasEquilibriumPoint(int[] data) {
-
+		
 		int size = data.length;
 		
-		int [] prefixSum = new int[size];
-		int [] suffixSum = new int[size];
-		
-		// set initial values for both arrays
-		prefixSum[0] = data[0];
-		suffixSum[size-1] = data[size-1];
-		
-		// find prefix sum
-		for(int index = 1; index < size; index++) {
-			prefixSum[index] = (prefixSum[(index-1)]+data[index]);
-		}
-		
-		// find suffix sum
-		for(int index = (size-2); index >= 0; index--) {
-			suffixSum[index] = (suffixSum[(index+1)]+data[index]);
-		}
-		
-		// find point where prefix & suffix sum are same
+		// compute total sum
+		int totalSum = 0;
 		for(int index = 0; index < size; index++) {
-			if(prefixSum[index] == suffixSum[index]) {
+			totalSum += data[index];
+		}
+		
+		// use left sum and keep subtracting elements
+		int leftSum = 0;
+		for(int index = 0; index < size; index++) {
+
+			// if left sum is same as right sum (total sum - current element) 
+			// return that equilibrium point
+			if(leftSum == (totalSum - data[index])) {
 				// equilibrium point
 				//System.out.println("Equilibrium point: "+data[index]);
 				return "Yes";
 			}
+
+			// otherwise update left sum and remove 
+			// current element from total sum
+			leftSum += data[index];
+			totalSum -= data[index];
 		}
-		// no equilibrium point found
 		return "No";
 	}
 

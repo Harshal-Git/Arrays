@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.prefixNsuffixSum;
+package com.prefixNsuffixSum.processQuery;
 
 import java.util.Arrays;
 

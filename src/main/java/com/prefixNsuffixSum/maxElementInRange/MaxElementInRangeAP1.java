@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.prefixNsuffixSum;
+package com.prefixNsuffixSum.maxElementInRange;
 
 import java.util.ArrayList;
 import java.util.Arrays;

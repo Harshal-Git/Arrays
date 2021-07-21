@@ -12,10 +12,12 @@ import java.util.Arrays;
  *		means difference = (right element - left element) should be max 
  *
  *	-> efficient approach : 
- *		initialize min difference as difference between first 2 elements and default lowest element as first element.
+ *
+ *		initialize 2 variables initially : minElement - as first element of the array
+ *											maxDifference - difference between first 2 elements (j > i => a[j] - a[i])
  *		
- *		now iterate over the array starting from 1 and check whether difference of current element & the lowest element found
- *		till now is higher than default difference? If yes; change the default higher difference.
+ *		now iterate over the array for remaining elements and check whether difference of current element & the lowest 
+ *		element found till now is higher OR default difference? whichever is higher; update the difference. 
  *
  *		meanwhile keep checking if we find any element lesser than current default value; change it also.	 
  *	
@@ -63,18 +65,18 @@ public class EfficientApproach {
 		 * there will be no negative calculation allowed if we set this 
 		 * baseline as 0. Hence setting initial difference like this.
 		 */
-		int difference = (data[1] - data[0]);
+		int maxDifference = (data[1] - data[0]);
 		int minVal = data[0];
 		
 		for(int index = 1; index < size; index++) {
 			
 			// find max value with existing max value & difference between current element & existing min value
-			difference = max(difference, (data[index]-minVal));
+			maxDifference = max(maxDifference, (data[index]-minVal));
 			
 			// keep updating existing min value also by comparing with current element
 			minVal = min(minVal, data[index]);
 		}
-		return difference;
+		return maxDifference;
 	}
 
 	/**

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.maxSumCircularSubArray;
+package com.maxSumOfSubarrayCircular;
 
 import java.util.Arrays;
 

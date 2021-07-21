@@ -44,25 +44,25 @@ public class EfficientApproach {
 	public static void main(String[] args) {
 
 		int [] data1 = {1, 2};
-		//System.out.println("Array: "+Arrays.toString(data1)+" --> Max sub array sum = "+findMaxSubArraySum(data1));
+		System.out.println("Array: "+Arrays.toString(data1)+" --> Max sub array sum = "+findMaxSubArraySum(data1));
 
 		int [] data2 = {5, 8, 3};
 		System.out.println("\nArray: "+Arrays.toString(data2)+" --> Max sub array sum = "+findMaxSubArraySum(data2));
 
 		int [] data3 = {2, 3, -8, 7, -1, 2, 3};
-		//System.out.println("\nArray: "+Arrays.toString(data3)+" --> Max sub array sum = "+findMaxSubArraySum(data3));
+		System.out.println("\nArray: "+Arrays.toString(data3)+" --> Max sub array sum = "+findMaxSubArraySum(data3));
 
 		int [] data4 = {-6, -1, -8};
-		//System.out.println("\nArray: "+Arrays.toString(data4)+" --> Max sub array sum = "+findMaxSubArraySum(data4));
+		System.out.println("\nArray: "+Arrays.toString(data4)+" --> Max sub array sum = "+findMaxSubArraySum(data4));
 
 		int [] data5 = {1, -2, 3, -1, 2};
-		//System.out.println("\nArray: "+Arrays.toString(data5)+" --> Max sub array sum = "+findMaxSubArraySum(data5));
+		System.out.println("\nArray: "+Arrays.toString(data5)+" --> Max sub array sum = "+findMaxSubArraySum(data5));
 
 		int [] data6 = {-5, 1, -2, 3, -1, 2, -2};
-		//System.out.println("\nArray: "+Arrays.toString(data6)+" --> Max sub array sum = "+findMaxSubArraySum(data6));
+		System.out.println("\nArray: "+Arrays.toString(data6)+" --> Max sub array sum = "+findMaxSubArraySum(data6));
 		
 		int [] data7 = {-3, 8, -2, 4, -5, 6};
-		//System.out.println("\nArray: "+Arrays.toString(data7)+" --> Max sub array sum = "+findMaxSubArraySum(data7));
+		System.out.println("\nArray: "+Arrays.toString(data7)+" --> Max sub array sum = "+findMaxSubArraySum(data7));
 	}
 
 	/**
