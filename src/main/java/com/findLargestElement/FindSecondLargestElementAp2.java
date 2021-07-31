@@ -26,47 +26,37 @@ public class FindSecondLargestElementAp2 {
 	 */
 	public static void main(String[] args) {
 
-		int secondLargest;
+		int [] data = null;
 
-		int [] data1 = {3, 8, 12, 5, 6};
-		secondLargest = findSecondLargestElement(data1);
-		printData(data1, secondLargest);
+		data = new int[] {3, 8, 12, 5, 6};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data2 = {6, 2, 9};
-		secondLargest = findSecondLargestElement(data2);
-		printData(data2, secondLargest);
+		data = new int[] {6, 2, 9};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data3 = {2, 4, 6, 8, 10};
-		secondLargest = findSecondLargestElement(data3);
-		printData(data3, secondLargest);
+		data = new int[] {2, 4, 6, 8, 10};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data4 = {2};
-		secondLargest = findSecondLargestElement(data4);
-		printData(data4, secondLargest);
+		data = new int[] {2};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data5 = {1, 2};
-		secondLargest = findSecondLargestElement(data5);
-		printData(data5, secondLargest);
+		data = new int[] {1, 2};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data6 = {2, 9};
-		secondLargest = findSecondLargestElement(data6);
-		printData(data6, secondLargest);
+		data = new int[] {2, 9};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data7 = {10, 10, 10};
-		secondLargest = findSecondLargestElement(data7);
-		printData(data7, secondLargest);
+		data = new int[] {10, 10, 10};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data8 = {5, 8, 12, 20, 20};
-		secondLargest = findSecondLargestElement(data8);
-		printData(data8, secondLargest);
+		data = new int[] {5, 8, 12, 20, 20};
+		printData(data, findSecondLargestElement(data));
 
-		int [] data9 = {5, 20, 12, 20, 8};
-		secondLargest = findSecondLargestElement(data9);
-		printData(data9, secondLargest);
-		
-		int [] data10 = {10, 10, 10, 8};
-		secondLargest = findSecondLargestElement(data10);
-		printData(data10, secondLargest);
+		data = new int[] {5, 20, 12, 20, 8};
+		printData(data, findSecondLargestElement(data));
+
+		data = new int[] {10, 10, 10, 8};
+		printData(data, findSecondLargestElement(data));
 	}
 
 	/**
