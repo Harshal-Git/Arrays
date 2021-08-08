@@ -4,6 +4,7 @@
 package com.findLeaders;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * @author Harshal-Git
@@ -58,17 +59,28 @@ public class EfficientApproach {
 	 */
 	private static void printLeaders(int[] data) {
 		int size = data.length;
-
+		
+		// storage
+		Stack<Integer> output = new Stack<>();
+		
 		// right most element will always be leader
 		int currentLeader = data[size-1];
-		System.out.print(currentLeader+" ");
+		//System.out.print(currentLeader+" ");
+		output.push(currentLeader);
 
 		// iterate over remaining elements on left
 		for(int index = (size-2); index >= 0; index--) {
 			if(currentLeader < data[index]) {
 				currentLeader = data[index];
-				System.out.print(currentLeader+" ");
+				//System.out.print(currentLeader+" ");
+				output.push(currentLeader);
 			}
 		}
+		
+		// remove data from stack
+		while(!output.isEmpty()) {
+			System.out.print(output.pop().intValue()+" ");
+		}
+		System.out.println();
 	}
 }

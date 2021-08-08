@@ -35,21 +35,29 @@ public class RotationByReverseAlgoLS {
 	 */
 	public static void main(String[] args) {
 
+		int [] arr = null;
+		int rotatePos = -1;
+
 		/* input 1 */
-		int arr1[] = new int[] {1, 2, 3, 4, 5};
-		int rotatePosition1 = 2;
-		System.out.println("Array: "+Arrays.toString(arr1));
-		System.out.println("Rotate position: "+rotatePosition1);
-		rotate(arr1, rotatePosition1, arr1.length);
-		System.out.println("Rotated array: "+Arrays.toString(arr1)+"\n");
+		arr = new int[] {1, 2, 3, 4, 5};
+		rotatePos = 2;
+		printMessage(arr, rotatePos);
 
 		/* input 2 */
-		int arr2[] = new int[] {2, 6, 10, 8, 4};
-		int rotatePosition2 = 9;
-		System.out.println("Array: "+Arrays.toString(arr2));
-		System.out.println("Rotate position: "+rotatePosition2);
-		rotate(arr2, rotatePosition2, arr2.length);
-		System.out.println("Rotated array: "+Arrays.toString(arr2)+"\n");
+		arr = new int[] {2, 6, 10, 8, 4};
+		rotatePos = 9;
+		printMessage(arr, rotatePos);
+	}
+
+	/**
+	 * @param arr
+	 * @param rotatePos
+	 */
+	private static void printMessage(int[] arr, int rotatePos) {
+		System.out.println("Array: "+Arrays.toString(arr));
+		System.out.println("Left Rotate position: "+rotatePos);
+		rotate(arr, rotatePos);
+		System.out.println("Rotated array: "+Arrays.toString(arr)+"\n");		
 	}
 
 	/**
@@ -58,20 +66,22 @@ public class RotationByReverseAlgoLS {
 	 * @param d - shift positions
 	 * @param n - array length (don't adjust to n-1)
 	 */
-	private static void rotate(int [] arr, int d, int n) {
+	private static void rotate(int [] arr, int d) {
+		// size of the array
+		int size = arr.length;
 
 		// calculate new rotate position 
 		// (considering rotate position bigger value than array length)
-		int rotatePos = (d % n);
+		int rotatePos = (d % size);
 
 		// if no rotation is needed; don't do it
 		if(rotatePos != 0) {
 			// reverse A(0, d-1)
 			reverse(arr, 0, (rotatePos-1));
 			// reverse A(d, n-1)
-			reverse(arr, rotatePos, (n-1));
+			reverse(arr, rotatePos, (size-1));
 			// reverse A(0, n-1)
-			reverse(arr, 0, (n-1));			
+			reverse(arr, 0, (size-1));			
 		}
 	}
 

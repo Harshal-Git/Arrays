@@ -70,6 +70,7 @@ public class FindSumPairAp3 {
 	 */
 	private static void runCase(int[] data, int sum) {
 		StringBuilder pairs = new StringBuilder();
+		Arrays.sort(data);
 		boolean pairsFound = findSumPairs(data, sum, pairs);
 		if(pairsFound) {
 			System.out.println("\nArray: "+Arrays.toString(data)+" has pair/s: ("+pairs.toString()+") which has sum: "+sum+".");
@@ -100,7 +101,7 @@ public class FindSumPairAp3 {
 			int end = (data.length-1);
 
 			while(start <= end) {
-				if((data[start]+data[end]) == sum) {
+				if(((data[start]+data[end]) == sum) && (data[start] != data[end])) {
 					// if pair found
 					pairs.append(data[start]).append(" : ").append(data[end]).append(", ");
 					start++;

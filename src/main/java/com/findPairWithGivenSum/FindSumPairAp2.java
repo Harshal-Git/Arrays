@@ -5,6 +5,7 @@ package com.findPairWithGivenSum;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Harshal-Git
@@ -84,7 +85,7 @@ public class FindSumPairAp2 {
 	 */
 	private static boolean findSumPairs(int[] data, int sum, StringBuilder pairs) {
 		// hash data structure to store elements
-		HashSet<Integer> elementsSet = new HashSet<>();
+		Set<Integer> elementsSet = new HashSet<>();
 		boolean pairsFound = false;
 		// input validation
 		if(data == null) {
