@@ -82,10 +82,14 @@ public class EfficientApproach {
 		 * 
 		 * 		(sum of normal array - lowest sum of sub array)
 		 * 
+		 * 	OR
+		 * 
+		 * 		(sum of normal array + highest sum of inverted sub array)
+		 * 
 		 * this is divided in 2 parts
 		 * 
 		 * 1. sum of normal array
-		 * 2. lowest sub array sum  
+		 * 2. lowest sub array sum  / highest inverted sub array sum
 		 */
 		int sumArray = 0;
 		for(int index = 0; index < size; index++) {
@@ -93,9 +97,7 @@ public class EfficientApproach {
 			data[index] = (-data[index]);	// array inversion
 		}
 		/*
-		 * (lowest sum of sub array) = (highest sum of inverted sub array)
-		 * 
-		 * to use the same Kadaen's function without any change; inverted array is used.
+		 * This highest sum of inverted subarray can be obtained by same Kadaen's function. 
 		 */
 		int maxCircularSum = sumArray + findMaxSumFromNormalSubarray(data);
 

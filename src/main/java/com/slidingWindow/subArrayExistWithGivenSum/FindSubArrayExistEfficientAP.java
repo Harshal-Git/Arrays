@@ -8,9 +8,9 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> an array with non-negative integer and a sum are given. Find whether any sun array exist with given sum? (Yes/No)
+ *	-> an array with non-negative integer and a sum are given. Find whether any subarray exist with total as given sum? (Yes/No)
  *
- * 	-> using sliding window technique
+ * 	-> using dynamic sliding window technique
  * 
  * 	ex:
  * 		i/p: {1, 4, 20, 3, 10, 5} & sum = 33 	=> o/p: Yes

@@ -10,8 +10,11 @@ import java.util.Arrays;
  *
  *	-> given an array of integers & a number 'k'. find maximum sum of 'k' consecutive elements.
  *
- *	-> efficient approach : first find sum of 'k' elements. Then in linear manner, remove first element & add next 
- *							element to find sum of next 'k' elements; continue until max sum is found. 
+ *	-> efficient approach : first find sum of 'k' elements. 
+ *		
+ *							then start processing remaining elements from end of first window and use below formula.
+ *
+ *  		sum of new window = sum of previous window + current element - first element of previous window 
  *
  *	ex:
  *

@@ -90,6 +90,10 @@ public class EfficientApproach {
 			rightMax[index] = rightMaxElement;
 		}
 
+		// max left & right arrays
+		System.out.println("Left Max: "+Arrays.toString(leftMax));
+		System.out.println("Right Max: "+Arrays.toString(rightMax));
+		
 		// apply water storage calculation formula for all intermediate elements
 		for(int index = 1; index < (size-1); index++) {
 			waterLevel += (findMin(leftMax[index], rightMax[index]) - data[index]);

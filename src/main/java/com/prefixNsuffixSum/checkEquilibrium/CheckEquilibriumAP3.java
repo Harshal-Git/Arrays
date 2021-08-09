@@ -14,13 +14,15 @@ import java.util.Arrays;
  *						If there are no elements on either side then sum can be considered as 0. Here that particular
  *						element will not be considered in sum. 
  *
- *	-> efficient solution 2 : calculate total array sum first. 
- *			
- *		Now starting from the left most element; check the left sum (initially it will be 0) and 
- *		right sum (total sum - current array element). If they are found same, then that's the equilibrium point. 
- 		
- 		If not same, then update the left sum by adding current element & delete current element from total sum.
- 		(as we are moving towards right to process pending elements only; no need to add new element back to the total sum.)
+ *	-> efficient solution 2
+ * 
+ *		For each element check equilibrium point with below formula:
+ *
+ * 		left sum for data @ i = right sum for data @ i (total sum - data @ i)
+ * 
+ *  	Initially this left sum will be 0. If for current element @ i, the sum is not same, then-
+ *  	
+ *  	1. update the left sum by adding data 			
  *
  *	ex: 
  *		i/p : {3, 4, 8, -9, 20, 6}	=> o/p : Yes (left side sum of 20 = right side sum of 20)

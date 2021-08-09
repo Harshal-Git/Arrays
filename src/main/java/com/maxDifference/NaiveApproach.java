@@ -11,7 +11,8 @@ import java.util.Arrays;
  *	-> find max difference between 2 array elements (a[j] - a[i]) where j > i
  *		means difference = (right element - left element) should be max 
  *
- *	-> standard approach : take each element and check it with all right elements to calculate (a[j] - a[i]) till the max difference is found.
+ *	-> standard approach : take each element and check it with all right elements to calculate (a[j] - a[i]) till the 
+ *		max difference is found.
  *
  *		ex: 
  *			i/p : 2, 3, 10, 6, 4, 8, 1 => o/p : 8 (10 - 2)

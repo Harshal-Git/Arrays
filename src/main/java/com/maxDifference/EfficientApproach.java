@@ -11,15 +11,14 @@ import java.util.Arrays;
  *	-> find max difference between 2 array elements (a[j] - a[i]) where j > i
  *		means difference = (right element - left element) should be max 
  *
- *	-> efficient approach : 
- *
- *		initialize 2 variables initially : minElement - as first element of the array
- *											maxDifference - difference between first 2 elements (j > i => a[j] - a[i])
+ *	-> efficient approach: we would consider every element as a[j] and we subtract it with the lowest element
+ *		available on the left side of a[j]. And thus difference of those will be checked for it's max value.
  *		
- *		now iterate over the array for remaining elements and check whether difference of current element & the lowest 
- *		element found till now is higher OR default difference? whichever is higher; update the difference. 
+ *		Consider first value as lowest value 'LV' & difference of first 2 elements as highest difference 'HD'.
  *
- *		meanwhile keep checking if we find any element lesser than current default value; change it also.	 
+ * 		Now iterate over remaining array to find max value HD for a(i) = max from [HD, (a(i) - LV)] 
+ * 			& 
+ * 		parallely find LV = min from (a(i), LV)  
  *	
  *		ex: 
  *			i/p : 2, 3, 10, 6, 4, 8, 1 => o/p : 8 (10 - 2)
@@ -67,15 +66,18 @@ public class EfficientApproach {
 		 */
 		int maxDifference = (data[1] - data[0]);
 		int minVal = data[0];
-		
+
 		for(int index = 1; index < size; index++) {
-			
+
 			// find max value with existing max value & difference between current element & existing min value
 			maxDifference = max(maxDifference, (data[index]-minVal));
-			
+
 			// keep updating existing min value also by comparing with current element
 			minVal = min(minVal, data[index]);
 		}
+
+		// paralelly we will find lowest element also
+		//System.out.println("Lowest element: "+minVal);
 		return maxDifference;
 	}
 
