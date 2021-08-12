@@ -54,14 +54,13 @@ public class EfficientApproach {
 	 * @return - updated capacity
 	 */
 	private static int removeDuplicates(int[] data) {
-		int lastIndex = 1; // consider first element is already processed
+		int uniqueLastIndex = 1; // consider first element is already processed
 		for(int index= 1; index < data.length; index++) {
-			if(data[lastIndex-1] != data[index]) {
-				data[lastIndex] = data[index];
-				lastIndex++;
+			if(data[uniqueLastIndex-1] != data[index]) {
+				data[uniqueLastIndex] = data[index];
+				uniqueLastIndex++;
 			}
 		}
-		return lastIndex;
+		return uniqueLastIndex;
 	}
-
 }
